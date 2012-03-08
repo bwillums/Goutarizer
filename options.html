@@ -1,0 +1,31 @@
+<html>
+<head>
+<script>
+	function restore_options()
+	{
+		var replaceWords = localStorage['replace_words'];
+		//Set Defaults
+		if(!replaceWords)
+		{
+			return;
+		}
+		document.getElementById("replace_words").value = replaceWords;
+	}
+	
+	function save_options()
+	{
+		localStorage['replace_words'] =  document.getElementById("replace_words").value;
+	}
+	
+</script>
+</head>
+<body onload="restore_options()">
+
+Replace Words:
+<br>
+<textarea id="replace_words">
+</textarea>
+<br>
+<button onclick="save_options()">Save</button>
+</body>
+</html>
