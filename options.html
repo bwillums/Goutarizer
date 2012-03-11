@@ -15,15 +15,18 @@
 	function save_options()
 	{
 		localStorage['replace_words'] =  document.getElementById("replace_words").value;
+		window.close();
 	}
 	
 </script>
 </head>
 <body onload="restore_options()">
+<h2>Welcome to Gouterizer!</h2>
 
-Replace Words:
+In the box below enter the words you would like to be replaced with the word "Gout".<br />
+Words can be separated by comma or new line.
 <br>
-<textarea id="replace_words">
+<textarea id="replace_words" cols="50" rows="5">
 </textarea>
 <br>
 <button onclick="save_options()">Save</button>
