@@ -1,6 +1,5 @@
 // Get replace words from background.html and run main function on return.
 chrome.extension.sendRequest({method: "getLocalStorage", key: "replace_words"}, goutItOut);
-
 function goutItOut(response)
 {
 	if(response.data != "")
@@ -28,3 +27,4 @@ function goutItOut(response)
 		alert("Slow down Cowboy, Gouterizer has no words to replace! Please visit the Gouterizer options page so we can get to Gouterizing!");
 	}
 }
+

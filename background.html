@@ -8,12 +8,13 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
+	
 	chrome.browserAction.setTitle({title:'Goutarizing...', tabId:tab.id});
 	chrome.browserAction.setBadgeBackgroundColor({color:[255,0,0,255]});
 	chrome.browserAction.setBadgeText({text:'G', tabId:tab.id});
 	chrome.tabs.executeScript(
-		null, {file:"content_script.js"}, function ()
-		{
+		tab.id, {file:"content_script.js"}, function(){
+			
 			chrome.browserAction.setTitle({title:'Goutarized', tabId:tab.id});
 			chrome.browserAction.setBadgeBackgroundColor({color:[0,255,0,255]});
 			chrome.browserAction.setBadgeText({text:'G', tabId:tab.id});
